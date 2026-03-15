@@ -1,0 +1,111 @@
+/* Auth Pages: Login & Register */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Left Panel */
+.auth-branding {
+  flex: 3; /* 60% approx */
+  background: var(--bg-surface);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-3xl);
+}
+
+/* Gradient Mesh for Auth Branding */
+.auth-branding::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(ellipse at center, rgba(59,130,246,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom left, rgba(139,92,246,0.1) 0%, transparent 60%);
+  animation: shimmer 15s infinite alternate linear;
+  z-index: 0;
+}
+
+.auth-branding-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.auth-branding h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: var(--space-lg);
+  background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-xl);
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+.feature-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--accent-teal);
+}
+
+/* Right Panel */
+.auth-form-container {
+  flex: 2; /* 40% approx */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  background: var(--bg-base);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: var(--space-2xl);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: var(--space-xl);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .auth-page {
+    flex-direction: column;
+  }
+  .auth-branding {
+    display: none; /* Hide branding on mobile to focus on login */
+  }
+  .auth-form-container {
+    padding: var(--space-md);
+    flex: 1;
+  }
+  .auth-card {
+    padding: var(--space-lg);
+  }
+}
